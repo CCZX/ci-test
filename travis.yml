@@ -1,18 +1,7 @@
 language: node_js
 
-node_js:
-  - "10"
-  - "12"
+before_script:
+  - npm install
 
-stages:
-  - test
-
-jobs:
-  - include:
-    - stage: test
-      script:
-        - node --version
-        - npm --version
-        - echo "Test start..."
-        - npm run test
-        - echo "Test end!!!"
+script:
+  - npm test
